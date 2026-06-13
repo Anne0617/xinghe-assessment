@@ -6,6 +6,10 @@ import sys
 
 def main():
     """Run administrative tasks."""
+    # Fix: add script dir to sys.path for non-ASCII path support
+    _script_dir = os.path.dirname(os.path.abspath(__file__))
+    if _script_dir not in sys.path:
+        sys.path.insert(0, _script_dir)
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
     try:
         from django.core.management import execute_from_command_line

@@ -269,7 +269,7 @@ def generate_report(result):
     task = result.assignment.task
 
     html_parts = []
-    html_parts.append(f'<h2>{employee.name} - 入职心理测评报告</h2>')
+    html_parts.append(f'<h2>{employee.name} - 入职人才测评报告</h2>')
     html_parts.append(f'<p>岗位: {employee.position} | 测评任务: {task.name}</p>')
     html_parts.append(f'<p>测评时间: {result.generated_at.strftime("%Y-%m-%d %H:%M")}</p>')
     html_parts.append(f'<p><strong>综合得分率: {result.score_percent:.1f}%</strong></p>')

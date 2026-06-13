@@ -1,0 +1,1 @@
+﻿import sys; sys.path.insert(0,'G:/心理测评系统'); import django; import os; os.environ.setdefault('DJANGO_SETTINGS_MODULE','config.settings'); django.setup(); from django.core.management import call_command; call_command('migrate')

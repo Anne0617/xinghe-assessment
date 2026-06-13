@@ -9,6 +9,7 @@ dist/
 build/
 *.egg
 .venv/
+python-embed/
 venv/
 env/
 
@@ -38,5 +39,9 @@ Thumbs.db
 
 # Local development
 *.zip
+ python-installer.exe
+ get-pip.py
+ python-embed.zip
 *.bat
 *.ps1
+

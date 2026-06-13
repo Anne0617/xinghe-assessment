@@ -149,7 +149,7 @@ class Command(BaseCommand):
         
         # 6. 创建测评模板
         tpl, created = AssessmentTemplate.objects.get_or_create(
-            name="通用入职心理测评",
+            name="通用入职人才测评",
             defaults={
                 "description": "适用于所有岗位的标准化入职心理评估",
                 "target_position": "通用", "estimated_minutes": 20,
@@ -161,7 +161,7 @@ class Command(BaseCommand):
                 TemplateQuestion.objects.create(
                     template=tpl, question=q, weight=1.0, sort_order=idx
                 )
-            self.stdout.write(f"   模板: 通用入职心理测评（{len(q_objects)} 道题）")
+            self.stdout.write(f"   模板: 通用入职人才测评（{len(q_objects)} 道题）")
         
         for name, desc, pos, minutes in [
             ("销售岗专项测评", "针对销售岗位的心理适应性评估", "销售", 20),
@@ -179,7 +179,7 @@ class Command(BaseCommand):
         
         # 7. 系统配置
         for key, value, desc in [
-            ("system_name", "星河智善人才测评", "系统名称"),
+            ("system_name", "智善TIC人才测评体系", "系统名称"),
             ("default_duration", "30", "默认作答时长(分钟)"),
             ("default_valid_days", "7", "默认有效期(天)"),
             ("min_password_length", "8", "密码最小长度"),

@@ -1,0 +1,21 @@
+﻿{% extends "base.html" %}
+{% load static %}
+{% block title %}作答完成{% endblock %}
+{% block content %}
+<style>
+.thanks-wrap { max-width:520px; margin:80px auto; text-align:center; }
+.thanks-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:48px 40px; }
+.thanks-card .icon { width:64px; height:64px; margin:0 auto 20px; background:#2e7d32; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; color:#fff; }
+.thanks-card h2 { font-size:22px; margin-bottom:8px; }
+.thanks-card p { font-size:14px; color:var(--text-light); line-height:1.8; margin-bottom:4px; }
+.thanks-card .btn-back { display:inline-flex; align-items:center; gap:8px; margin-top:24px; padding:10px 28px; background:var(--accent); color:#fff; border-radius:4px; font-size:14px; font-weight:600; }</style>
+<div class="thanks-wrap">
+  <div class="thanks-card">
+    <div class="icon"><i class="fas fa-check-circle"></i></div>
+    <h2>作答已提交</h2>
+    <p>感谢您的参与，您的测评结果已成功提交。</p>
+    <p>HR将在审核后与您联系，如有疑问请咨询公司人力资源部。</p>
+    <a href="/" class="btn-back"><i class="fas fa-home"></i> 返回首页</a>
+  </div>
+</div>
+{% endblock %}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}星河智善人才测评{% endblock %}</title>
+    <title>{% block title %}智善TIC人才测评体系{% endblock %}</title>
     <meta name="description" content="专业人才评估与职业发展平台">
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <style>
@@ -89,7 +89,7 @@
         <div class="navbar-inner">
             <a href="{% url 'assessment:home' %}" class="nav-brand">
                 <i class="fas fa-star"></i>
-                <span>星河智善人才测评</span>
+                <span>智善TIC人才测评体系</span>
             </a>
             <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
                 <i class="fas fa-bars"></i>
@@ -107,6 +107,6 @@
         </div>
     </nav>
     <main class="content">{% block content %}{% endblock %}</main>
-    <footer class="footer"><p>&copy; {% now "Y" %} 星河智善人才测评 &mdash; 专业人才评估与发展平台</p></footer>
+    <footer class="footer"><p>&copy; {% now "Y" %} 智善TIC人才测评体系 &mdash; 专业人才评估与发展平台</p></footer>
 </body>
 </html>
