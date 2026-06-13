@@ -4,6 +4,8 @@ __pycache__/
 *.egg-info/
 .eggs/
 dist/
+!frontend/dist/
+*.db
 build/
 *.egg
 .venv/
@@ -33,3 +35,8 @@ Thumbs.db
 # Env
 .env
 *.env.local
+
+# Local development
+*.zip
+*.bat
+*.ps1
