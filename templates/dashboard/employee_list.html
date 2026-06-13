@@ -1,0 +1,10 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}员工管理{% endblock %}
+{% block breadcrumb %}员工管理{% endblock %}
+{% block content %}
+<div class="page-header"><h1>员工信息</h1>
+<form method="get" style="display:flex;gap:8px;"><input type="text" name="search" class="form-control" placeholder="搜索" style="width:240px" value="{{ request.GET.search }}"><button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-search"></i></button></form>
+<a href="{% url 'dashboard:task_create' %}" class="btn btn-success"><i class="fas fa-plus"></i> 批量导入</a></div>
+<div class="card"><div class="table-wrap"><table><thead><tr><th>姓名</th><th>性别</th><th>岗位</th><th>分公司</th><th>状态</th><th>操作</th></tr></thead>
+<tbody>{% for emp in employees %}<tr><td><strong>{{ emp.name }}</strong></td><td>{{ emp.get_gender_display|default:"-" }}</td><td>{{ emp.position|default:"-" }}</td><td>{{ emp.branch.name|default:"-" }}</td><td><span class="badge {% if emp.status == 'assessed' %}badge-success{% elif emp.status == 'pending' %}badge-warning{% else %}badge-secondary{% endif %}">{{ emp.get_status_display }}</span></td><td><form method="post" action="{% url 'dashboard:employee_delete' emp.pk %}" onsubmit="return confirm('确定删除？')" style="display:inline;">{% csrf_token %}<button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button></form></td></tr>{% empty %}<tr><td colspan="6"><div class="empty-state"><i class="fas fa-users"></i><p>暂无员工</p></div></td></tr>{% endfor %}</tbody></table></div></div>
+{% endblock %}
